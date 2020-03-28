@@ -6,8 +6,6 @@
   <title>Hexo | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="theme-color" content="#3F51B5">
-  
   
   <meta name="keywords" content="">
   <meta property="og:type" content="website">
@@ -18,14 +16,13 @@
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
   <meta name="summary" content="">
-  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="/">
   
 <link rel="stylesheet" href="/css/style.css">
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
 
 <body>
   <div id="loading" class="active"></div>
@@ -37,57 +34,15 @@
   </a>
   <div class="brand-wrap">
     <div class="brand">
-      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
+      <a href="/" class="avatar"><img src=""></a>
       <hgroup class="introduce">
         <h5 class="nickname">John Doe</h5>
-        <a href="mailto:634206017@qq.com" title="634206017@qq.com" class="mail">634206017@qq.com</a>
+        <a href="mailto:undefined" class="mail">
       </hgroup>
     </div>
   </div>
   <div class="scroll-wrap flex-col">
     <ul class="nav">
-      
-          <li class="waves-block waves-effect active">
-            <a href="/"  >
-              <i class="icon icon-lg icon-home"></i>
-              主页
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/archives"  >
-              <i class="icon icon-lg icon-archives"></i>
-              Archives
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/tags"  >
-              <i class="icon icon-lg icon-tags"></i>
-              Tags
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="https://github.com/yscoder" target="_blank" >
-              <i class="icon icon-lg icon-github"></i>
-              Github
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="http://www.weibo.com/ysweb" target="_blank" >
-              <i class="icon icon-lg icon-weibo"></i>
-              Weibo
-            </a>
-          </li>
-      
-          <li class="waves-block waves-effect">
-            <a href="/404"  >
-              <i class="icon icon-lg icon-link"></i>
-              测试
-            </a>
-          </li>
       
     </ul>
 
@@ -96,7 +51,7 @@
   <p>Hexo &copy; 2020</p>
   <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
   <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
-  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+  <a href="" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
 </footer>
 
   </div>
@@ -111,20 +66,6 @@
         </a>
         <div class="flex-col header-title ellipsis">Hexo</div>
         
-        <div class="search-wrap" id="search-wrap">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-                <i class="icon icon-lg icon-chevron-left"></i>
-            </a>
-            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
-                <i class="icon icon-lg icon-search"></i>
-            </a>
-        </div>
-        
-        
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
-            <i class="icon icon-lg icon-share-alt"></i>
-        </a>
         
     </div>
 </header>
@@ -176,7 +117,7 @@
     
     
         <a href="/2020/03/28/2020-03-28-react-%E5%85%A5%E9%97%A8/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -217,11 +158,24 @@
  install nodejs  brew install node  
  install hexo  npm i hexo -g  
  
-   查看 hexo 版本       1   2   3   4   5   6   7   8   9   10   11   12   13   14   15   16   17   18   19   20   21   22  
+   查看 hexo 版本       1   2   3   4   5   6   7   8   9   10   11   12   13   14   15   16   17   18   19   20   21   22        mz@Mz  ~  node --version   v13.11.0    mz@Mz  ~  npm --version   6.14.4    mz@Mz  ~  hexo -verison   hexo-cli: 3.1.0   os: Darwin 19.3.0 darwin x64   node: 13.11.0   v8: 7.9.317.25-node.29   uv: 1.34.2   zlib: 1.2.11   brotli: 1.0.7   ares: 1.15.0   modules: 79   nghttp2: 1.40.0   napi: 6   llhttp: 2.0.4   openssl: 1.1.1d   cldr: 35.1   icu: 64.2   tz: 2019a   unicode: 12.1       
+
+   常用命令  
+ hexo clean  
+ hexo g 
+ hexo s 
+ hexo d 
+ 
+   本地调试  
+ hexo g #生成 
+ hexo s #启动本地服务，进行文章预览调试 
+ hexo d -g #或者直接作用组合命令 
+ 
+
     
     
         <a href="/2020/03/28/Hexo-Github-Pages-%E6%90%AD%E5%BB%BA-Blog/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -258,11 +212,24 @@
     <div class="post-content" id="post-content" itemprop="postContent" >
 
     
-         Welcome to  Hexo ! This is your very first post. Check  documentation  for more info. If you get any problems when using Hexo, you can find the answer in  troubleshooting  or you can ask me on  GitHu
+         Welcome to  Hexo ! This is your very first post. Check  documentation  for more info. If you get any problems when using Hexo, you can find the answer in  troubleshooting  or you can ask me on  GitHub . 
+   Quick Start    Create a new post       1       $ hexo new  "My New Post"        
+
+ More info:  Writing  
+   Run server       1       $ hexo server       
+
+ More info:  Server  
+   Generate static files       1       $ hexo generate       
+
+ More info:  Generating  
+   Deploy to remote sites       1       $ hexo deploy       
+
+ More info:  Deployment  
+
     
     
         <a href="/2020/03/28/hello-world/" class="post-more waves-effect waves-button">
-            阅读全文...
+            
         </a>
     </div>
     
@@ -277,78 +244,11 @@
 <div class="mask" id="mask"></div>
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
-<script>
-var BLOG_SHARE = {
-    title: "Hexo",
-    pic: "/img/logo.jpg",
-    summary: document.getElementsByName('summary')[0].content,
-    url: "http://yoursite.com/index.html"
-};
-</script>
-<div class="global-share" id="global-share">
-    <div class="tit">分享到：</div>
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
-          豆
-        </a>
-      </li>
-    </ul>
- </div>
-
-
 <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 
 
 <script src="/js/main.js"></script>
 
-
-
-
-<div class="search-panel" id="search-panel">
-    <ul class="search-result" id="search-result"></ul>
-</div>
-<script type="text/template" id="search-tpl">
-<li class="item">
-    <a href="/{path}" class="waves-block waves-effect">
-        <div class="title ellipsis" title="{title}">{title}</div>
-        <div class="flex-row flex-middle">
-            <div class="tags ellipsis">
-                {tags}
-            </div>
-            <time class="flex-col time">{date}</time>
-        </div>
-    </a>
-</li>
-</script>
-
-
-<script src="/js/search.js"></script>
 
 
 
