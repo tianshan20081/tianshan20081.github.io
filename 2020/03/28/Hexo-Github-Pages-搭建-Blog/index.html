@@ -7,15 +7,15 @@
   
   <title>Hexo Github Pages 搭建 Blog | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装工具 install nodejs brew install nodejs install hexo npm i hexo -g  查看 hexo 版本12345678910111213141516171819hexo --version @  ~  hexo -verisonhexo-cli: 3.1.0os: Darwin 19.3.0 darwin x64node: 13.11.0v">
+  <meta name="description" content="安装工具 install nodejs brew install node install hexo npm i hexo -g  查看 hexo 版本12345678910111213141516171819202122 mz@Mz  ~  node --versionv13.11.0 mz@Mz  ~  npm --version6.14.4 mz@Mz  ~  hexo -ver">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo Github Pages 搭建 Blog">
 <meta property="og:url" content="http://yoursite.com/2020/03/28/Hexo-Github-Pages-%E6%90%AD%E5%BB%BA-Blog/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="安装工具 install nodejs brew install nodejs install hexo npm i hexo -g  查看 hexo 版本12345678910111213141516171819hexo --version @  ~  hexo -verisonhexo-cli: 3.1.0os: Darwin 19.3.0 darwin x64node: 13.11.0v">
+<meta property="og:description" content="安装工具 install nodejs brew install node install hexo npm i hexo -g  查看 hexo 版本12345678910111213141516171819202122 mz@Mz  ~  node --versionv13.11.0 mz@Mz  ~  npm --version6.14.4 mz@Mz  ~  hexo -ver">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-28T10:32:52.000Z">
-<meta property="article:modified_time" content="2020-03-28T10:36:04.377Z">
+<meta property="article:modified_time" content="2020-03-28T10:45:27.718Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Hexo , Github Pages , Blog">
 <meta name="twitter:card" content="summary">
@@ -90,15 +90,22 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="安装工具"><a href="#安装工具" class="headerlink" title="安装工具"></a>安装工具</h3><ol>
-<li>install nodejs <code>brew install nodejs</code></li>
+<li>install nodejs <code>brew install node</code></li>
 <li>install hexo <code>npm i hexo -g</code></li>
 </ol>
-<h3 id="查看-hexo-版本"><a href="#查看-hexo-版本" class="headerlink" title="查看 hexo 版本"></a>查看 hexo 版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">hexo --version</span><br><span class="line"> @  ~  hexo -verison</span><br><span class="line">hexo-cli: 3.1.0</span><br><span class="line">os: Darwin 19.3.0 darwin x64</span><br><span class="line">node: 13.11.0</span><br><span class="line">v8: 7.9.317.25-node.29</span><br><span class="line">uv: 1.34.2</span><br><span class="line">zlib: 1.2.11</span><br><span class="line">brotli: 1.0.7</span><br><span class="line">ares: 1.15.0</span><br><span class="line">modules: 79</span><br><span class="line">nghttp2: 1.40.0</span><br><span class="line">napi: 6</span><br><span class="line">llhttp: 2.0.4</span><br><span class="line">openssl: 1.1.1d</span><br><span class="line">cldr: 35.1</span><br><span class="line">icu: 64.2</span><br><span class="line">tz: 2019a</span><br><span class="line">unicode: 12.1</span><br></pre></td></tr></table></figure>
+<h3 id="查看-hexo-版本"><a href="#查看-hexo-版本" class="headerlink" title="查看 hexo 版本"></a>查看 hexo 版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> mz@Mz  ~  node --version</span><br><span class="line">v13.11.0</span><br><span class="line"> mz@Mz  ~  npm --version</span><br><span class="line">6.14.4</span><br><span class="line"> mz@Mz  ~  hexo -verison</span><br><span class="line">hexo-cli: 3.1.0</span><br><span class="line">os: Darwin 19.3.0 darwin x64</span><br><span class="line">node: 13.11.0</span><br><span class="line">v8: 7.9.317.25-node.29</span><br><span class="line">uv: 1.34.2</span><br><span class="line">zlib: 1.2.11</span><br><span class="line">brotli: 1.0.7</span><br><span class="line">ares: 1.15.0</span><br><span class="line">modules: 79</span><br><span class="line">nghttp2: 1.40.0</span><br><span class="line">napi: 6</span><br><span class="line">llhttp: 2.0.4</span><br><span class="line">openssl: 1.1.1d</span><br><span class="line">cldr: 35.1</span><br><span class="line">icu: 64.2</span><br><span class="line">tz: 2019a</span><br><span class="line">unicode: 12.1</span><br></pre></td></tr></table></figure>
+
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><ol>
+<li>hexo clean </li>
+<li>hexo g</li>
+<li>hexo s</li>
+<li>hexo d</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/03/28/Hexo-Github-Pages-%E6%90%AD%E5%BB%BA-Blog/" data-id="ck8bhc1gq0000a0mk6ndfdj6v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/03/28/Hexo-Github-Pages-%E6%90%AD%E5%BB%BA-Blog/" data-id="ck8bhpghc0000yzmk1aks9g54" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo-Github-Pages-Blog/" rel="tag">Hexo , Github Pages , Blog</a></li></ul>
