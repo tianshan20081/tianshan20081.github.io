@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tianshan20081.github.io/"/>
-  <updated>2020-03-29T05:01:59.597Z</updated>
+  <updated>2020-03-29T05:18:01.884Z</updated>
   <id>http://tianshan20081.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://tianshan20081.github.io/2020/03/29/Hexo-GitHub-Page-%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/"/>
     <id>http://tianshan20081.github.io/2020/03/29/Hexo-GitHub-Page-%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/</id>
     <published>2020-03-29T03:27:07.000Z</published>
-    <updated>2020-03-29T05:01:59.597Z</updated>
+    <updated>2020-03-29T05:18:01.884Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="图片需要在文章和首页中-同时出现"><a href="#图片需要在文章和首页中-同时出现" class="headerlink" title="图片需要在文章和首页中 同时出现"></a>图片需要在文章和首页中 同时出现</h3><img src="/2020/03/29/Hexo-GitHub-Page-%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/big_image.jpg" class="" title="alert content"><h2 id="上传本地图片"><a href="#上传本地图片" class="headerlink" title="上传本地图片"></a>上传本地图片</h2><h3 id="使用相对路径"><a href="#使用相对路径" class="headerlink" title="使用相对路径"></a>使用相对路径</h3><p>需要 配置 <strong>/_config.yml</strong><br><code>post_asset_folder: true</code><br>然后 执行命令 <code>hexo n post_name</code><br>会在 <strong>source/_posts</strong> 下面 出现一个 <strong>post_name</strong> 文件夹和 <strong>post_name.md</strong> 的文件<br>将图片存放在 <strong>post_name</strong> 文件夹 下面即可</p><p>使用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](big_image.jpg)</span><br></pre></td></tr></table></figure><p><img src="big_image.jpg" alt=""></p><h3 id="使用绝对路径"><a href="#使用绝对路径" class="headerlink" title="使用绝对路径"></a>使用绝对路径</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">图片存储位置</span><br><span class="line">&#x2F;source&#x2F;_posts&#x2F;Hexo-GitHub-Page-上传图片&#x2F;big_image.jpg</span><br></pre></td></tr></table></figure><p>使用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](&#x2F;images&#x2F;2020-03-29&#x2F;big_image.jpg)</span><br></pre></td></tr></table></figure><p><img src="/images/2020-03-29/big_image.jpg" alt=""></p><h2 id="添加网络图片"><a href="#添加网络图片" class="headerlink" title="添加网络图片"></a>添加网络图片</h2><p>使用图床将图片上传至 图片服务器 <a href="">七牛云</a>、<a href="">又拍云</a> 、<a href="">阿里云</a> 或其他的，获取到图片下载链接</p><p>使用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](https:&#x2F;&#x2F;gb-imgs.oss-cn-beijing.aliyuncs.com&#x2F;big_image.jpg)</span><br></pre></td></tr></table></figure><p><img src="https://gb-imgs.oss-cn-beijing.aliyuncs.com/big_image.jpg" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="图片需要在文章和首页中-同时出现"><a href="#图片需要在文章和首页中-同时出现" class="headerlink" title="图片需要在文章和首页中 同时出现"></a>图片需要在文章和首页中 同时出现</h3><img src="/2020/03/29/Hexo-GitHub-Page-%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/big_image.jpg" class="" title="alert content"><h2 id="上传本地图片"><a href="#上传本地图片" class="headerlink" title="上传本地图片"></a>上传本地图片</h2><h3 id="使用相对路径"><a href="#使用相对路径" class="headerlink" title="使用相对路径"></a>使用相对路径</h3><p>需要 配置 <strong>/_config.yml</strong><br><code>post_asset_folder: true</code><br>然后 执行命令 <code>hexo n post_name</code><br>会在 <strong>source/_posts</strong> 下面 出现一个 <strong>post_name</strong> 文件夹和 <strong>post_name.md</strong> 的文件<br>将图片存放在 <strong>post_name</strong> 文件夹 下面即可</p><p>使用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](big_image.jpg)</span><br></pre></td></tr></table></figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="big_image.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><h3 id="使用绝对路径"><a href="#使用绝对路径" class="headerlink" title="使用绝对路径"></a>使用绝对路径</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">图片存储位置</span><br><span class="line">&#x2F;source&#x2F;_posts&#x2F;Hexo-GitHub-Page-上传图片&#x2F;big_image.jpg</span><br></pre></td></tr></table></figure><p>使用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](&#x2F;images&#x2F;2020-03-29&#x2F;big_image.jpg)</span><br></pre></td></tr></table></figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="/images/2020-03-29/big_image.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><h2 id="添加网络图片"><a href="#添加网络图片" class="headerlink" title="添加网络图片"></a>添加网络图片</h2><p>使用图床将图片上传至 图片服务器 <a href="">七牛云</a>、<a href="">又拍云</a> 、<a href="">阿里云</a> 或其他的，获取到图片下载链接</p><p>使用</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](https:&#x2F;&#x2F;gb-imgs.oss-cn-beijing.aliyuncs.com&#x2F;big_image.jpg)</span><br></pre></td></tr></table></figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://gb-imgs.oss-cn-beijing.aliyuncs.com/big_image.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure>]]></content>
     
     <summary type="html">
     
@@ -35,6 +35,14 @@
     </summary>
     
     
+      <category term="Hexo 上传图片" scheme="http://tianshan20081.github.io/categories/Hexo-%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/"/>
+    
+    
+      <category term="Hexo" scheme="http://tianshan20081.github.io/tags/Hexo/"/>
+    
+      <category term="GitHub Pages" scheme="http://tianshan20081.github.io/tags/GitHub-Pages/"/>
+    
+      <category term="Hexo 上传图片" scheme="http://tianshan20081.github.io/tags/Hexo-%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/"/>
     
   </entry>
   
@@ -43,20 +51,24 @@
     <link href="http://tianshan20081.github.io/2020/03/28/2020-03-28-react-%E5%85%A5%E9%97%A8/"/>
     <id>http://tianshan20081.github.io/2020/03/28/2020-03-28-react-%E5%85%A5%E9%97%A8/</id>
     <published>2020-03-28T10:55:12.000Z</published>
-    <updated>2020-03-28T10:57:31.782Z</updated>
+    <updated>2020-03-29T05:17:04.070Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h3><p>nodejs npm </p><h3 id="react-脚手架"><a href="#react-脚手架" class="headerlink" title="react 脚手架"></a>react 脚手架</h3><p><code>npm i create-react-app -g</code></p><h3 id="创建-react-工程"><a href="#创建-react-工程" class="headerlink" title="创建 react 工程"></a>创建 react 工程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir react-app &amp;&amp; cd react-app</span><br><span class="line">create-react-app .</span><br><span class="line">yarn start</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h3 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h3><p>nodejs npm</p><h3 id="react-脚手架"><a href="#react-脚手架" class="headerlink" title="react 脚手架"></a>react 脚手架</h3><p><code>npm i create-react-app -g</code></p><h3 id="创建-react-工程"><a href="#创建-react-工程" class="headerlink" title="创建 react 工程"></a>创建 react 工程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir react-app &amp;&amp; cd react-app</span><br><span class="line">create-react-app .</span><br><span class="line">yarn start</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;准备环境&quot;&gt;&lt;a href=&quot;#准备环境&quot; class=&quot;headerlink&quot; title=&quot;准备环境&quot;&gt;&lt;/a&gt;准备环境&lt;/h3&gt;&lt;p&gt;nodejs npm &lt;/p&gt;
-&lt;h3 id=&quot;react-脚手架&quot;&gt;&lt;a href=&quot;#react-脚手架&quot; class=
+        &lt;h3 id=&quot;准备环境&quot;&gt;&lt;a href=&quot;#准备环境&quot; class=&quot;headerlink&quot; title=&quot;准备环境&quot;&gt;&lt;/a&gt;准备环境&lt;/h3&gt;&lt;p&gt;nodejs npm&lt;/p&gt;
+&lt;h3 id=&quot;react-脚手架&quot;&gt;&lt;a href=&quot;#react-脚手架&quot; class=&quot;
       
     
     </summary>
     
+    
+      <category term="React" scheme="http://tianshan20081.github.io/categories/React/"/>
+    
+      <category term="Nodejs" scheme="http://tianshan20081.github.io/categories/React/Nodejs/"/>
     
     
       <category term="React" scheme="http://tianshan20081.github.io/tags/React/"/>
@@ -68,9 +80,9 @@
     <link href="http://tianshan20081.github.io/2020/03/28/Hexo-Github-Pages-%E6%90%AD%E5%BB%BA-Blog/"/>
     <id>http://tianshan20081.github.io/2020/03/28/Hexo-Github-Pages-%E6%90%AD%E5%BB%BA-Blog/</id>
     <published>2020-03-28T10:32:52.000Z</published>
-    <updated>2020-03-28T10:47:43.273Z</updated>
+    <updated>2020-03-29T05:16:19.508Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="安装工具"><a href="#安装工具" class="headerlink" title="安装工具"></a>安装工具</h3><ol><li>install nodejs <code>brew install node</code></li><li>install hexo <code>npm i hexo -g</code></li></ol><h3 id="查看-hexo-版本"><a href="#查看-hexo-版本" class="headerlink" title="查看 hexo 版本"></a>查看 hexo 版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> mz@Mz  ~  node --version</span><br><span class="line">v13.11.0</span><br><span class="line"> mz@Mz  ~  npm --version</span><br><span class="line">6.14.4</span><br><span class="line"> mz@Mz  ~  hexo -verison</span><br><span class="line">hexo-cli: 3.1.0</span><br><span class="line">os: Darwin 19.3.0 darwin x64</span><br><span class="line">node: 13.11.0</span><br><span class="line">v8: 7.9.317.25-node.29</span><br><span class="line">uv: 1.34.2</span><br><span class="line">zlib: 1.2.11</span><br><span class="line">brotli: 1.0.7</span><br><span class="line">ares: 1.15.0</span><br><span class="line">modules: 79</span><br><span class="line">nghttp2: 1.40.0</span><br><span class="line">napi: 6</span><br><span class="line">llhttp: 2.0.4</span><br><span class="line">openssl: 1.1.1d</span><br><span class="line">cldr: 35.1</span><br><span class="line">icu: 64.2</span><br><span class="line">tz: 2019a</span><br><span class="line">unicode: 12.1</span><br></pre></td></tr></table></figure><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><ol><li>hexo clean </li><li>hexo g</li><li>hexo s</li><li>hexo d</li></ol><h3 id="本地调试"><a href="#本地调试" class="headerlink" title="本地调试"></a>本地调试</h3><ol><li>hexo g #生成</li><li>hexo s #启动本地服务，进行文章预览调试</li><li>hexo d -g #或者直接作用组合命令</li></ol>]]></content>
+    <content type="html"><![CDATA[<h3 id="安装工具"><a href="#安装工具" class="headerlink" title="安装工具"></a>安装工具</h3><ol><li>install nodejs <code>brew install node</code></li><li>install hexo <code>npm i hexo -g</code></li></ol><h3 id="查看-hexo-版本"><a href="#查看-hexo-版本" class="headerlink" title="查看 hexo 版本"></a>查看 hexo 版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> mz@Mz  ~  node --version</span><br><span class="line">v13.11.0</span><br><span class="line"> mz@Mz  ~  npm --version</span><br><span class="line">6.14.4</span><br><span class="line"> mz@Mz  ~  hexo -verison</span><br><span class="line">hexo-cli: 3.1.0</span><br><span class="line">os: Darwin 19.3.0 darwin x64</span><br><span class="line">node: 13.11.0</span><br><span class="line">v8: 7.9.317.25-node.29</span><br><span class="line">uv: 1.34.2</span><br><span class="line">zlib: 1.2.11</span><br><span class="line">brotli: 1.0.7</span><br><span class="line">ares: 1.15.0</span><br><span class="line">modules: 79</span><br><span class="line">nghttp2: 1.40.0</span><br><span class="line">napi: 6</span><br><span class="line">llhttp: 2.0.4</span><br><span class="line">openssl: 1.1.1d</span><br><span class="line">cldr: 35.1</span><br><span class="line">icu: 64.2</span><br><span class="line">tz: 2019a</span><br><span class="line">unicode: 12.1</span><br></pre></td></tr></table></figure><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><ol><li>hexo clean</li><li>hexo g</li><li>hexo s</li><li>hexo d</li></ol><h3 id="本地调试"><a href="#本地调试" class="headerlink" title="本地调试"></a>本地调试</h3><ol><li>hexo g #生成</li><li>hexo s #启动本地服务，进行文章预览调试</li><li>hexo d -g #或者直接作用组合命令</li></ol>]]></content>
     
     <summary type="html">
     
@@ -85,7 +97,11 @@
     
     
     
-      <category term="Hexo , Github Pages , Blog" scheme="http://tianshan20081.github.io/tags/Hexo-Github-Pages-Blog/"/>
+      <category term="Hexo" scheme="http://tianshan20081.github.io/tags/Hexo/"/>
+    
+      <category term="Github Pages" scheme="http://tianshan20081.github.io/tags/Github-Pages/"/>
+    
+      <category term="Blog" scheme="http://tianshan20081.github.io/tags/Blog/"/>
     
   </entry>
   
@@ -94,7 +110,7 @@
     <link href="http://tianshan20081.github.io/2020/03/28/hello-world/"/>
     <id>http://tianshan20081.github.io/2020/03/28/hello-world/</id>
     <published>2020-03-28T09:42:17.562Z</published>
-    <updated>2020-03-28T09:42:17.562Z</updated>
+    <updated>2020-03-29T05:17:35.649Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
     
@@ -108,6 +124,12 @@
     </summary>
     
     
+      <category term="Hexo" scheme="http://tianshan20081.github.io/categories/Hexo/"/>
+    
+    
+      <category term="Hexo Hello" scheme="http://tianshan20081.github.io/tags/Hexo-Hello/"/>
+    
+      <category term="Hexo 入门" scheme="http://tianshan20081.github.io/tags/Hexo-%E5%85%A5%E9%97%A8/"/>
     
   </entry>
   
