@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Android ART Dex2oat | Lerege</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Android,ART,dex2oat">
+    <meta name="description" content="dex2oat 源码androidxref dex2oat.cc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android ART Dex2oat">
+<meta property="og:url" content="http://tianshan20081.github.io/2020/04/03/Android-ART-Dex2oat/index.html">
+<meta property="og:site_name" content="Lerege">
+<meta property="og:description" content="dex2oat 源码androidxref dex2oat.cc">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-03T06:48:25.000Z">
+<meta property="article:modified_time" content="2020-04-03T06:50:55.883Z">
+<meta property="article:author" content="gooker">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="ART">
+<meta property="article:tag" content="dex2oat">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="Lerege" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">gooker</h5>
+          <a href="mailto:zhangshch2008@gmail.com" title="zhangshch2008@gmail.com" class="mail">zhangshch2008@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Android ART Dex2oat</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Android ART Dex2oat</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-04-03T06:48:25.000Z" itemprop="datePublished" class="page-time">
+  2020-04-03
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#dex2oat-源码"><span class="post-toc-number">1.</span> <span class="post-toc-text">dex2oat 源码</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article
+    id="post-Android-ART-Dex2oat"
+    class="post-article article-type-post fade"
+    itemprop="blogPost"
+>
+    <div class="post-card">
+        <h1 class="post-card-title">Android ART Dex2oat</h1>
+        <div class="post-meta">
+            <time
+    class="post-time"
+    title="2020-04-03 14:48:25"
+    datetime="2020-04-03T06:48:25.000Z"
+    itemprop="datePublished"
+    >
+    <!-- 2020-04-03 -->
+    2020-04-03 14:48:25
+    </time
+>
+ 
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+ 
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="dex2oat-源码"><a href="#dex2oat-源码" class="headerlink" title="dex2oat 源码"></a>dex2oat 源码</h3><p><a href="http://androidxref.com/9.0.0_r3/xref/art/dex2oat/dex2oat.cc" target="_blank" rel="noopener">androidxref dex2oat.cc</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2020-04-03T06:50:55.883Z" itemprop="dateUpdated">2020-04-03 14:50:55</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2020/04/03/Android-ART-Dex2oat/" target="_blank" rel="external">http://tianshan20081.github.io/2020/04/03/Android-ART-Dex2oat/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="http://tianshan20081.github.io">
+            <img src="/img/avatar.jpg" alt="gooker">
+            gooker
+        </a>
+    </footer>
+</blockquote>
+ 
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ART/" rel="tag">ART</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dex2oat/" rel="tag">dex2oat</a></li></ul>
+ 
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tianshan20081.github.io/2020/04/03/Android-ART-Dex2oat/&title=《Android ART Dex2oat》 — Lerege&pic=http://tianshan20081.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tianshan20081.github.io/2020/04/03/Android-ART-Dex2oat/&title=《Android ART Dex2oat》 — Lerege&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tianshan20081.github.io/2020/04/03/Android-ART-Dex2oat/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android ART Dex2oat》 — Lerege&url=http://tianshan20081.github.io/2020/04/03/Android-ART-Dex2oat/&via=http://tianshan20081.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tianshan20081.github.io/2020/04/03/Android-ART-Dex2oat/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/04/01/2020-04-01-adb-%E8%8E%B7%E5%8F%96-Android-%E6%89%8B%E6%9C%BA%E6%9C%AC%E4%BF%A1%E6%81%AF/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">adb 获取 Android 手机本信息</h4>
+      </a>
+    </div>
+  
+</nav>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: '' == 'true',
+            verify: 'false' == 'true',
+            appId: "JLYCjClyj53r8enxigEwL2kt-gzGzoHsz",
+            appKey: "U6qgdcKBD0qSbv0LD5I4z0bC",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>gooker &copy; 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tianshan20081.github.io/2020/04/03/Android-ART-Dex2oat/&title=《Android ART Dex2oat》 — Lerege&pic=http://tianshan20081.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tianshan20081.github.io/2020/04/03/Android-ART-Dex2oat/&title=《Android ART Dex2oat》 — Lerege&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tianshan20081.github.io/2020/04/03/Android-ART-Dex2oat/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android ART Dex2oat》 — Lerege&url=http://tianshan20081.github.io/2020/04/03/Android-ART-Dex2oat/&via=http://tianshan20081.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tianshan20081.github.io/2020/04/03/Android-ART-Dex2oat/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMElEQVR42u3aQW7DMAwFUd//0u42RWB5PmUHEDVaFUlq8XlBUBSPA6/za31+zn9z9eTvJxxvLBkyZCzLOIeLhDjefvzkKwyPTYYMGfswSCrk2/AESpL4ODYZMmTISB/Hy7tn95UhQ4aM9FD6xv/KkCFDBinyaomVH4N/dBaXIUPGggwexO//fuV+Q4YMGUsxznDxkq52qXmWlgwZMnozeIIjV48zVwjkUH0TjwwZMloz0tZ8LfnWGnmvHFllyJCxICNtgdXSIhkpq6VvGTJk7MBIRyKeau7z9F0sDWXIkNGCQdpkaQrmDbJaMr3pGsqQIaMpI23uk2KOj5qlFwZH+lAZMmQ0YvBysPZtmmTHxeW/38iQIaM1o9aaJ9unh1jye9Q1lCFDRjsGb/eTNPpUuHGZKEOGjG0Y842w2uVlbfjsqNWeMmTIWJwx379KE/HMkfWmNJQhQ0YjBg8lHVdNUy0fFLuMSoYMGa0ZJLj0OPrwOAX+VoYMGV0Z89unl5Hp20XNOBkyZGzAOMCqbUbKRJ5kLyOXIUPGBox0m1oaJcm6OOoqQ4aMDRi1Ada03c/Td5ruZciQ0ZVxhotfc6aAtHknQ4aMfRh8xaMP4YjYfLEoQ4aM3ozaMXVm8IIPcAQxyJAhYwPG+PP5nD3/mlCdK0OGDBm4mEsHOGpRyZAhQ8YMg4xfpO258WuSIUPGDgw+wkUAtUsCfhUhQ4aM3Rjp0ZG31QipNnJRvNSUIUPGeow/jIXRP4fPkEAAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Lerege';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

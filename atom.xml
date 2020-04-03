@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tianshan20081.github.io/"/>
-  <updated>2020-04-01T03:08:09.657Z</updated>
+  <updated>2020-04-03T06:50:55.883Z</updated>
   <id>http://tianshan20081.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Android ART Dex2oat</title>
+    <link href="http://tianshan20081.github.io/2020/04/03/Android-ART-Dex2oat/"/>
+    <id>http://tianshan20081.github.io/2020/04/03/Android-ART-Dex2oat/</id>
+    <published>2020-04-03T06:48:25.000Z</published>
+    <updated>2020-04-03T06:50:55.883Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="dex2oat-源码"><a href="#dex2oat-源码" class="headerlink" title="dex2oat 源码"></a>dex2oat 源码</h3><p><a href="http://androidxref.com/9.0.0_r3/xref/art/dex2oat/dex2oat.cc" target="_blank" rel="noopener">androidxref dex2oat.cc</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;dex2oat-源码&quot;&gt;&lt;a href=&quot;#dex2oat-源码&quot; class=&quot;headerlink&quot; title=&quot;dex2oat 源码&quot;&gt;&lt;/a&gt;dex2oat 源码&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://androidxref.com/9.0.0_
+      
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="http://tianshan20081.github.io/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://tianshan20081.github.io/tags/Android/"/>
+    
+      <category term="ART" scheme="http://tianshan20081.github.io/tags/ART/"/>
+    
+      <category term="dex2oat" scheme="http://tianshan20081.github.io/tags/dex2oat/"/>
+    
+  </entry>
   
   <entry>
     <title>adb 获取 Android 手机本信息</title>
