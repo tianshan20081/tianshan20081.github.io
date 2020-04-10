@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tianshan20081.github.io/"/>
-  <updated>2020-04-03T06:50:55.883Z</updated>
+  <updated>2020-04-10T01:58:27.548Z</updated>
   <id>http://tianshan20081.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>adb 获取 Android 基本信息</title>
+    <link href="http://tianshan20081.github.io/2020/04/09/adb-%E8%8E%B7%E5%8F%96-Android-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF/"/>
+    <id>http://tianshan20081.github.io/2020/04/09/adb-%E8%8E%B7%E5%8F%96-Android-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF/</id>
+    <published>2020-04-09T03:17:30.000Z</published>
+    <updated>2020-04-10T01:58:27.548Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="android-id"><a href="#android-id" class="headerlink" title="android_id"></a>android_id</h3><h4 id="什么是-android-id"><a href="#什么是-android-id" class="headerlink" title="什么是 android_id"></a>什么是 android_id</h4><h4 id="获取-android-id"><a href="#获取-android-id" class="headerlink" title="获取 android_id"></a>获取 android_id</h4><p>代码获取</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public static String getAndroidId(Context context) &#123;</span><br><span class="line">    return Settings.System.getString(contentResolver, Settings.System.ANDROID_ID);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public static String getAndroidId(Context context) &#123;</span><br><span class="line">    return Settings.Secure.getString(contentResolver, Settings.Secure.ANDROID_ID);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>adb 获取</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># adb shell content query --uri content:&#x2F;&#x2F;settings&#x2F;secure&#x2F;android_id --projection value</span><br><span class="line">Row: 0 value&#x3D;98078XXX96fe</span><br><span class="line"># adb shell settings get secure android_id</span><br><span class="line">98078XXX96fe</span><br></pre></td></tr></table></figure><h3 id="SerialNumber"><a href="#SerialNumber" class="headerlink" title="SerialNumber"></a>SerialNumber</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">android.os.Build.SERIAL</span><br></pre></td></tr></table></figure><h3 id="macAddress"><a href="#macAddress" class="headerlink" title="macAddress"></a>macAddress</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">  * &lt;uses-permission android:name&#x3D;&quot;android.permission.ACCESS_WIFI_STATE&quot; &#x2F;&gt;</span><br><span class="line">  * &lt;uses-permission android:name&#x3D;&quot;android.permission.CHANGE_WIFI_STATE&quot; &#x2F;&gt;</span><br><span class="line">  * &lt;uses-permission android:name&#x3D;&quot;android.permission.WAKE_LOCK&quot; &#x2F;&gt;</span><br><span class="line">  * *&#x2F;</span><br><span class="line">requestPermission(arrayOf(Manifest.permission.CHANGE_WIFI_STATE), &#123;</span><br><span class="line">    val macAddress: String?</span><br><span class="line">    val wifiManager &#x3D; applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager</span><br><span class="line">    val info &#x3D; wifiManager.connectionInfo</span><br><span class="line"></span><br><span class="line">    if (!wifiManager.isWifiEnabled) &#123;</span><br><span class="line">        &#x2F;&#x2F;必须先打开，才能获取到MAC地址</span><br><span class="line">        wifiManager.isWifiEnabled &#x3D; true</span><br><span class="line">        wifiManager.isWifiEnabled &#x3D; false</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    macAddress &#x3D; info.macAddress</span><br><span class="line"></span><br><span class="line">    macAddressBtn.text &#x3D; &quot;macAddress:$&#123;macAddress&#125;&quot;</span><br><span class="line">&#125;, &#123;&#125;)</span><br></pre></td></tr></table></figure><h3 id="subscriberId"><a href="#subscriberId" class="headerlink" title="subscriberId"></a>subscriberId</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">  * &lt;uses-permission android:name &#x3D; &quot;android.permission.READ_PHONE_STATE&quot; &#x2F;&gt;</span><br><span class="line">  * *&#x2F;</span><br><span class="line">requestPermission(arrayOf(Manifest.permission.READ_PHONE_STATE), &#123;</span><br><span class="line">    val mTelephonyMgr &#x3D; getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager</span><br><span class="line">    if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) &#x3D;&#x3D; PackageManager.PERMISSION_GRANTED) &#123;</span><br><span class="line">        val subscriberId &#x3D; mTelephonyMgr.subscriberId &#x2F;&#x2F;获取IMSI号</span><br><span class="line">        subscriberIdBtn.text &#x3D; &quot;SubscriberId:$&#123;subscriberId&#125;&quot;</span><br><span class="line">        val deviceId &#x3D; mTelephonyMgr.deviceId &#x2F;&#x2F;获取IMSI号</span><br><span class="line">        deviceIdBtn.text &#x3D; &quot;Device Id:$&#123;deviceId&#125;&quot;</span><br><span class="line">        var imei &#x3D; if (Build.VERSION.SDK_INT &gt;&#x3D; Build.VERSION_CODES.O) &#123;</span><br><span class="line">            mTelephonyMgr.imei</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            &quot;&quot;</span><br><span class="line">        &#125;</span><br><span class="line">        imeiIdBtn.text &#x3D; &quot;IMEI Id:$&#123;imei&#125;&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;, &#123;&#125;)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;android-id&quot;&gt;&lt;a href=&quot;#android-id&quot; class=&quot;headerlink&quot; title=&quot;android_id&quot;&gt;&lt;/a&gt;android_id&lt;/h3&gt;&lt;h4 id=&quot;什么是-android-id&quot;&gt;&lt;a href=&quot;#什么是-and
+      
+    
+    </summary>
+    
+    
+      <category term="Android" scheme="http://tianshan20081.github.io/categories/Android/"/>
+    
+    
+      <category term="Android" scheme="http://tianshan20081.github.io/tags/Android/"/>
+    
+      <category term="Adb" scheme="http://tianshan20081.github.io/tags/Adb/"/>
+    
+  </entry>
   
   <entry>
     <title>Android ART Dex2oat</title>
