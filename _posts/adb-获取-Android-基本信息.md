@@ -11,7 +11,7 @@ categories: [Android]
 #### 获取 android_id
 代码获取
 
-```
+```java
 public static String getAndroidId(Context context) {
     return Settings.System.getString(contentResolver, Settings.System.ANDROID_ID);
 }
@@ -24,7 +24,7 @@ public static String getAndroidId(Context context) {
 
 adb 获取
 
-```
+```shell
 # adb shell content query --uri content://settings/secure/android_id --projection value
 Row: 0 value=98078XXX96fe
 # adb shell settings get secure android_id
@@ -37,7 +37,7 @@ android.os.Build.SERIAL
 ```
 
 ### macAddress
-```
+```java
 /**
   * <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
   * <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
@@ -63,10 +63,11 @@ requestPermission(arrayOf(Manifest.permission.CHANGE_WIFI_STATE), {
 
 
 ### subscriberId
-```
+```java
 /**
   * <uses-permission android:name = "android.permission.READ_PHONE_STATE" />
-  * */
+  * 
+*/
 requestPermission(arrayOf(Manifest.permission.READ_PHONE_STATE), {
     val mTelephonyMgr = getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
     if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
