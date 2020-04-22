@@ -57,7 +57,7 @@ evaluate(new File(
 
 `implementation project(path: ':flutter')`
 
-### Android 打开 Flutter
+### Android 调用 Flutter
 
 #### 打开默认工程
 
@@ -118,7 +118,9 @@ public void jumpFlutterView(View view) {
 ```
 
 ### Flutter 代码
+
 `main.dart`
+
 ```dart
 import 'dart:ui';
 
@@ -185,6 +187,7 @@ class MyApp extends StatelessWidget {
 ```
 
 `MinePage.dart`
+
 ```dart
 import 'package:flutter/material.dart';
 
