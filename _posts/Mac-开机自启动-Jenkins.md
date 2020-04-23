@@ -46,7 +46,7 @@ nohup java -jar ~/Dev/bin/jenkins/jenkins_2.222.1.war  > /dev/null 2>&1 &
 
 右击 -> 打开方式 -> 其他 -> 实用工具 -> 终端
 
-![mac_jenkins_auto_start](./Mac-开机自启动-Jenkins/mac_jenkins_auto_start.jpg)
+![mac_jenkins_auto_start](mac_jenkins_auto_start.jpg)
 
 
 
@@ -54,10 +54,10 @@ nohup java -jar ~/Dev/bin/jenkins/jenkins_2.222.1.war  > /dev/null 2>&1 &
 
 偏好设置 -> 用户与群组 -> 登录项 -> 添加 -> 选择 **startupJenkins.sh**
 
-![mac_jenkins_auto_cmd_add](./Mac-开机自启动-Jenkins/mac_jenkins_auto_cmd_add.jpg)
+![mac_jenkins_auto_cmd_add](mac_jenkins_auto_cmd_add.jpg)
 
 
 
 ### 重启 Mac 测试
 
-![mac_jenkins_auto_start_success](./Mac-开机自启动-Jenkins/mac_jenkins_auto_start_success.jpg)
+![mac_jenkins_auto_start_success](mac_jenkins_auto_start_success.jpg)
