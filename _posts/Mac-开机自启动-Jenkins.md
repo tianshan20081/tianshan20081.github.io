@@ -59,5 +59,4 @@ nohup java -jar ~/Dev/bin/jenkins/jenkins_2.222.1.war  > /dev/null 2>&1 &
 
 
 ### 重启 Mac 测试
-
-![mac_jenkins_auto_start_success](mac_jenkins_auto_start_success.jpg)
+![](mac_jenkins_auto_start_success.jpg)

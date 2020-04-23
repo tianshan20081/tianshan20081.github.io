@@ -31,7 +31,7 @@ categories: ['Hexo 上传图片']
 
 ```
 图片存储位置
-/source/_posts/Hexo-GitHub-Page-上传图片/big_image.jpg
+source/images/2020-03-29/big_image.jpg
 ```
 
 使用
