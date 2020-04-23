@@ -59,4 +59,6 @@ nohup java -jar ~/Dev/bin/jenkins/jenkins_2.222.1.war  > /dev/null 2>&1 &
 
 
 ### 重启 Mac 测试
-![](mac_jenkins_auto_start_success.jpg)
+浏览器打开 http://127.0.0.1:8080
+
+![mac_jenkins_auto_start_success](mac_jenkins_auto_start_success.jpg)
