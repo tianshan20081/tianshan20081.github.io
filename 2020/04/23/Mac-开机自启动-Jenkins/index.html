@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Mac 开机自启动 Jenkins | Legere</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Mac,Mac 开机自启动,Jenkins">
+    <meta name="description" content="下载 JenkinsJenkins https:&#x2F;&#x2F;jenkins.io&#x2F; 下载 war 安装包 版本号 2.22.1 下载连接 Jenkins.war 重命名 为jenkins_2.222.1.war 存放路径 ~&#x2F;Dev&#x2F;bin&#x2F;jenkins&#x2F;jenkins_2.222.1.war 启动脚本脚本内容~&#x2F;Dev&#x2F;bin&#x2F;jenkins&#x2F;startupJenkins.sh 12345678910">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac 开机自启动 Jenkins">
+<meta property="og:url" content="http://tianshan20081.github.io/2020/04/23/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8-Jenkins/index.html">
+<meta property="og:site_name" content="Legere">
+<meta property="og:description" content="下载 JenkinsJenkins https:&#x2F;&#x2F;jenkins.io&#x2F; 下载 war 安装包 版本号 2.22.1 下载连接 Jenkins.war 重命名 为jenkins_2.222.1.war 存放路径 ~&#x2F;Dev&#x2F;bin&#x2F;jenkins&#x2F;jenkins_2.222.1.war 启动脚本脚本内容~&#x2F;Dev&#x2F;bin&#x2F;jenkins&#x2F;startupJenkins.sh 12345678910">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://tianshan20081.github.io/2020/04/23/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8-Jenkins/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8-Jenkins/mac_jenkins_auto_start.jpg">
+<meta property="og:image" content="http://tianshan20081.github.io/2020/04/23/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8-Jenkins/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8-Jenkins/mac_jenkins_auto_cmd_add.jpg">
+<meta property="og:image" content="http://tianshan20081.github.io/2020/04/23/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8-Jenkins/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8-Jenkins/mac_jenkins_auto_start_success.jpg">
+<meta property="article:published_time" content="2020-04-23T03:10:48.000Z">
+<meta property="article:modified_time" content="2020-04-23T03:58:43.689Z">
+<meta property="article:author" content="Legere">
+<meta property="article:tag" content="Mac">
+<meta property="article:tag" content="Mac 开机自启动">
+<meta property="article:tag" content="Jenkins">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://tianshan20081.github.io/2020/04/23/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8-Jenkins/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8-Jenkins/mac_jenkins_auto_start.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="Legere" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Legere</h5>
+          <a href="mailto:zhangshch2008@gmail.com" title="zhangshch2008@gmail.com" class="mail">zhangshch2008@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Mac 开机自启动 Jenkins</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Mac 开机自启动 Jenkins</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-04-23T03:10:48.000Z" itemprop="datePublished" class="page-time">
+  2020-04-23
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Mac/">Mac</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Mac/Jenkins/">Jenkins</a></li></ul></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#下载-Jenkins"><span class="post-toc-number">1.</span> <span class="post-toc-text">下载 Jenkins</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#启动脚本"><span class="post-toc-number">2.</span> <span class="post-toc-text">启动脚本</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#脚本内容"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">脚本内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#脚本添加权限"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">脚本添加权限</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#修改-startupJenkins-sh-文件的打开方式"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">修改 startupJenkins.sh  文件的打开方式</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#添加开机启动项"><span class="post-toc-number">3.</span> <span class="post-toc-text">添加开机启动项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#重启-Mac-测试"><span class="post-toc-number">4.</span> <span class="post-toc-text">重启 Mac 测试</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article
+    id="post-Mac-开机自启动-Jenkins"
+    class="post-article article-type-post fade"
+    itemprop="blogPost"
+>
+    <div class="post-card">
+        <h1 class="post-card-title">Mac 开机自启动 Jenkins</h1>
+        <div class="post-meta">
+            <time
+    class="post-time"
+    title="2020-04-23 11:10:48"
+    datetime="2020-04-23T03:10:48.000Z"
+    itemprop="datePublished"
+    >
+    <!-- 2020-04-23 -->
+    2020-04-23 11:10:48
+    </time
+>
+ 
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Mac/">Mac</a><ul class="article-category-list-child"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Mac/Jenkins/">Jenkins</a></li></ul></li></ul>
+
+
+ 
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="下载-Jenkins"><a href="#下载-Jenkins" class="headerlink" title="下载 Jenkins"></a>下载 Jenkins</h3><p><a href="https://jenkins.io/" target="_blank" rel="noopener">Jenkins</a> <a href="https://jenkins.io/" target="_blank" rel="noopener">https://jenkins.io/</a></p>
+<p>下载 <code>war</code> 安装包 版本号 <code>2.22.1</code> 下载连接 <a href="http://ftp.yz.yamagata-u.ac.jp/pub/misc/jenkins/war-stable/2.222.1/jenkins.war" target="_blank" rel="noopener">Jenkins.war</a> 重命名 为<strong>jenkins_2.222.1.war</strong></p>
+<p>存放路径 <strong>~/Dev/bin/jenkins/jenkins_2.222.1.war</strong></p>
+<h3 id="启动脚本"><a href="#启动脚本" class="headerlink" title="启动脚本"></a>启动脚本</h3><h4 id="脚本内容"><a href="#脚本内容" class="headerlink" title="脚本内容"></a>脚本内容</h4><p><strong>~/Dev/bin/jenkins/startupJenkins.sh</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">port&#x3D;8080</span><br><span class="line">#根据端口号查询对应的pid</span><br><span class="line">pid&#x3D;$(netstat -anvp tcp  | grep $port | awk &#39;&#123;print $9&#125;&#39; | awk -F&quot;&#x2F;&quot; &#39;&#123; print $1 &#125;&#39;);</span><br><span class="line"></span><br><span class="line">#杀掉对应的进程，如果pid不存在，则不执行</span><br><span class="line">if [  -n  &quot;$pid&quot;  ];  then</span><br><span class="line">    echo &quot;查询到占用端口号:$port 的应用PID: $pid &quot;;</span><br><span class="line">    kill  -9  $pid;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">echo &quot;Jenkins Start ... &quot;</span><br><span class="line">nohup java -jar ~&#x2F;Dev&#x2F;bin&#x2F;jenkins&#x2F;jenkins_2.222.1.war  &gt; &#x2F;dev&#x2F;null 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="脚本添加权限"><a href="#脚本添加权限" class="headerlink" title="脚本添加权限"></a>脚本添加权限</h4><p><code>chmod 777 startupJenkins.sh</code></p>
+<h4 id="修改-startupJenkins-sh-文件的打开方式"><a href="#修改-startupJenkins-sh-文件的打开方式" class="headerlink" title="修改 startupJenkins.sh  文件的打开方式"></a>修改 startupJenkins.sh  文件的打开方式</h4><p>右击 -&gt; 打开方式 -&gt; 其他 -&gt; 实用工具 -&gt; 终端</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="./Mac-开机自启动-Jenkins/mac_jenkins_auto_start.jpg" alt="mac_jenkins_auto_start" title="">
+                </div>
+                <div class="image-caption">mac_jenkins_auto_start</div>
+            </figure>
+
+
+
+<h3 id="添加开机启动项"><a href="#添加开机启动项" class="headerlink" title="添加开机启动项"></a>添加开机启动项</h3><p>偏好设置 -&gt; 用户与群组 -&gt; 登录项 -&gt; 添加 -&gt; 选择 <strong>startupJenkins.sh</strong></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="./Mac-开机自启动-Jenkins/mac_jenkins_auto_cmd_add.jpg" alt="mac_jenkins_auto_cmd_add" title="">
+                </div>
+                <div class="image-caption">mac_jenkins_auto_cmd_add</div>
+            </figure>
+
+
+
+<h3 id="重启-Mac-测试"><a href="#重启-Mac-测试" class="headerlink" title="重启 Mac 测试"></a>重启 Mac 测试</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="./Mac-开机自启动-Jenkins/mac_jenkins_auto_start_success.jpg" alt="mac_jenkins_auto_start_success" title="">
+                </div>
+                <div class="image-caption">mac_jenkins_auto_start_success</div>
+            </figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2020-04-23T03:58:43.689Z" itemprop="dateUpdated">2020-04-23 11:58:43</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://tianshan20081.github.io">
+            <img src="/img/avatar.jpg" alt="Legere">
+            Legere
+        </a>
+    </footer>
+</blockquote>
+ 
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Jenkins/" rel="tag">Jenkins</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/" rel="tag">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/" rel="tag">Mac 开机自启动</a></li></ul>
+ 
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tianshan20081.github.io/2020/04/23/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8-Jenkins/&title=《Mac 开机自启动 Jenkins》 — Legere&pic=http://tianshan20081.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tianshan20081.github.io/2020/04/23/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8-Jenkins/&title=《Mac 开机自启动 Jenkins》 — Legere&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tianshan20081.github.io/2020/04/23/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8-Jenkins/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Mac 开机自启动 Jenkins》 — Legere&url=http://tianshan20081.github.io/2020/04/23/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8-Jenkins/&via=http://tianshan20081.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tianshan20081.github.io/2020/04/23/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8-Jenkins/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/04/22/ESLint-%E5%85%A5%E9%97%A8/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">ESLint 入门</h4>
+      </a>
+    </div>
+  
+</nav>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Legere &copy; 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tianshan20081.github.io/2020/04/23/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8-Jenkins/&title=《Mac 开机自启动 Jenkins》 — Legere&pic=http://tianshan20081.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tianshan20081.github.io/2020/04/23/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8-Jenkins/&title=《Mac 开机自启动 Jenkins》 — Legere&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tianshan20081.github.io/2020/04/23/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8-Jenkins/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Mac 开机自启动 Jenkins》 — Legere&url=http://tianshan20081.github.io/2020/04/23/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8-Jenkins/&via=http://tianshan20081.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tianshan20081.github.io/2020/04/23/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8-Jenkins/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADHUlEQVR42u3aQXLCQAwEQP7/6eQBKZOZlakC0T5RBMz2+qBIs49HfP08vf5+8ur1389ffffqnatVPV5xYWNjY38IOyG1mOS7z399srbk8WBjY2PvYz8vJ3nhSWDzO+Tbevk+NjY29hezJ+UtX1ZSlrCxsbGxW3bOSArY8zYmL3vY2NjY2PngZg7OB0Dtd184S8PGxsZ+e3aeir7/65fk29jY2NhvzD4rHpN2pQ2JJ6XuUoGNjY29iH12LCYf6yTNzF2bmxzHxMbGxt7Hbn/y3gAgiXjzTc8HT9jY2Nib2Mm//jkvLzBnR3buakuwsbGxN7Hz4jQ/fDMfPM03FBsbG3sfO6Emw5p8oJM0IZNANx9UYWNjY+9gT250VzmZjP7zGAMbGxt7Nztn3NUktEvPtzWKJbCxsbEXsduBThIVTCLYfPvmG4eNjY29iX0WtbZNQr5lbclMNqKen2FjY2N/CLttQnL8JMptW4v6ztjY2Njr2MVgvYyB72pFkrChuLCxsbEXsfNSlPx8u9A2bGiD3vrgDjY2NvYHstui1bYZbVQwrz5Fvo2NjY29lD0Z/beYuw7i1H/FxsbGXsrO24lJcWqP/iTbWj8GbGxs7HXsvHmYl6U2+m1j3eiRYGNjYy9it4WqjV3zAtOO++eNEzY2NvY+9lmwehbZngUD7eOJ4l5sbGzsFez2SE07lE+WPimibUOFjY2NvYk9GeWcHYKcHOJpg+Fi/7CxsbE/nJ0cqZw0J+37Z3cr2h5sbGzsReyzafnZ8KitHUnZO4sxsLGxsbeyz6KCs8YgP3aT3PnsaBE2Njb2JnZeKtojOHnDcPbrbRm7zLexsbGxF7HzZeUHZSZFrq7AefiBjY2NvYL9U17tFswXfTao+qfvwMbGxl7EvuuUS9tm5GFA22Dkq8LGxsbexM6LVr7QeQzchgf5/bGxsbG3ss/G+pPG4HUDqSgqxsbGxv56dh7Ets1J0pacxcbY2NjY2EkJef6Zs6HSJHL4Z6iEjY2NvYh9Vpwm4UFeupJ75o8QGxsbex/7bCjzOsa8/cgfBjY2NvaHs38B35YXciPlFzUAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Legere';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

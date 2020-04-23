@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tianshan20081.github.io/"/>
-  <updated>2020-04-22T11:24:41.051Z</updated>
+  <updated>2020-04-23T03:58:43.689Z</updated>
   <id>http://tianshan20081.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac 开机自启动 Jenkins</title>
+    <link href="http://tianshan20081.github.io/2020/04/23/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8-Jenkins/"/>
+    <id>http://tianshan20081.github.io/2020/04/23/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8-Jenkins/</id>
+    <published>2020-04-23T03:10:48.000Z</published>
+    <updated>2020-04-23T03:58:43.689Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="下载-Jenkins"><a href="#下载-Jenkins" class="headerlink" title="下载 Jenkins"></a>下载 Jenkins</h3><p><a href="https://jenkins.io/" target="_blank" rel="noopener">Jenkins</a> <a href="https://jenkins.io/" target="_blank" rel="noopener">https://jenkins.io/</a></p><p>下载 <code>war</code> 安装包 版本号 <code>2.22.1</code> 下载连接 <a href="http://ftp.yz.yamagata-u.ac.jp/pub/misc/jenkins/war-stable/2.222.1/jenkins.war" target="_blank" rel="noopener">Jenkins.war</a> 重命名 为<strong>jenkins_2.222.1.war</strong></p><p>存放路径 <strong>~/Dev/bin/jenkins/jenkins_2.222.1.war</strong></p><h3 id="启动脚本"><a href="#启动脚本" class="headerlink" title="启动脚本"></a>启动脚本</h3><h4 id="脚本内容"><a href="#脚本内容" class="headerlink" title="脚本内容"></a>脚本内容</h4><p><strong>~/Dev/bin/jenkins/startupJenkins.sh</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">port&#x3D;8080</span><br><span class="line">#根据端口号查询对应的pid</span><br><span class="line">pid&#x3D;$(netstat -anvp tcp  | grep $port | awk &#39;&#123;print $9&#125;&#39; | awk -F&quot;&#x2F;&quot; &#39;&#123; print $1 &#125;&#39;);</span><br><span class="line"></span><br><span class="line">#杀掉对应的进程，如果pid不存在，则不执行</span><br><span class="line">if [  -n  &quot;$pid&quot;  ];  then</span><br><span class="line">    echo &quot;查询到占用端口号:$port 的应用PID: $pid &quot;;</span><br><span class="line">    kill  -9  $pid;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">echo &quot;Jenkins Start ... &quot;</span><br><span class="line">nohup java -jar ~&#x2F;Dev&#x2F;bin&#x2F;jenkins&#x2F;jenkins_2.222.1.war  &gt; &#x2F;dev&#x2F;null 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure><h4 id="脚本添加权限"><a href="#脚本添加权限" class="headerlink" title="脚本添加权限"></a>脚本添加权限</h4><p><code>chmod 777 startupJenkins.sh</code></p><h4 id="修改-startupJenkins-sh-文件的打开方式"><a href="#修改-startupJenkins-sh-文件的打开方式" class="headerlink" title="修改 startupJenkins.sh  文件的打开方式"></a>修改 startupJenkins.sh  文件的打开方式</h4><p>右击 -&gt; 打开方式 -&gt; 其他 -&gt; 实用工具 -&gt; 终端</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="./Mac-开机自启动-Jenkins/mac_jenkins_auto_start.jpg" alt="mac_jenkins_auto_start" title="">                </div>                <div class="image-caption">mac_jenkins_auto_start</div>            </figure><h3 id="添加开机启动项"><a href="#添加开机启动项" class="headerlink" title="添加开机启动项"></a>添加开机启动项</h3><p>偏好设置 -&gt; 用户与群组 -&gt; 登录项 -&gt; 添加 -&gt; 选择 <strong>startupJenkins.sh</strong></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="./Mac-开机自启动-Jenkins/mac_jenkins_auto_cmd_add.jpg" alt="mac_jenkins_auto_cmd_add" title="">                </div>                <div class="image-caption">mac_jenkins_auto_cmd_add</div>            </figure><h3 id="重启-Mac-测试"><a href="#重启-Mac-测试" class="headerlink" title="重启 Mac 测试"></a>重启 Mac 测试</h3><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="./Mac-开机自启动-Jenkins/mac_jenkins_auto_start_success.jpg" alt="mac_jenkins_auto_start_success" title="">                </div>                <div class="image-caption">mac_jenkins_auto_start_success</div>            </figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;下载-Jenkins&quot;&gt;&lt;a href=&quot;#下载-Jenkins&quot; class=&quot;headerlink&quot; title=&quot;下载 Jenkins&quot;&gt;&lt;/a&gt;下载 Jenkins&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://jenkins.io/&quot; target=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="Mac" scheme="http://tianshan20081.github.io/categories/Mac/"/>
+    
+      <category term="Jenkins" scheme="http://tianshan20081.github.io/categories/Mac/Jenkins/"/>
+    
+    
+      <category term="Mac" scheme="http://tianshan20081.github.io/tags/Mac/"/>
+    
+      <category term="Mac 开机自启动" scheme="http://tianshan20081.github.io/tags/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8/"/>
+    
+      <category term="Jenkins" scheme="http://tianshan20081.github.io/tags/Jenkins/"/>
+    
+  </entry>
   
   <entry>
     <title>ESLint 入门</title>
