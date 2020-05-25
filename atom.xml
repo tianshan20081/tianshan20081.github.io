@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tianshan20081.github.io/"/>
-  <updated>2020-04-23T04:20:00.560Z</updated>
+  <updated>2020-05-25T02:28:38.379Z</updated>
   <id>http://tianshan20081.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>快速发布DockerCompose</title>
+    <link href="http://tianshan20081.github.io/2020/05/25/%E5%BF%AB%E9%80%9F%E5%8F%91%E5%B8%83DockerCompose/"/>
+    <id>http://tianshan20081.github.io/2020/05/25/%E5%BF%AB%E9%80%9F%E5%8F%91%E5%B8%83DockerCompose/</id>
+    <published>2020-05-25T02:16:23.000Z</published>
+    <updated>2020-05-25T02:28:38.379Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> # docker --version</span><br><span class="line">Docker version 19.03.8, build afacb8b</span><br><span class="line"> # docker-compose --version</span><br><span class="line">docker-compose version 1.25.5, build 8a1c60f6</span><br></pre></td></tr></table></figure><h3 id="创建工程"><a href="#创建工程" class="headerlink" title="创建工程"></a>创建工程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> # tree</span><br><span class="line">.</span><br><span class="line">├── docker-compose.yml</span><br><span class="line">└── product</span><br><span class="line">    ├── Dockerfile</span><br><span class="line">    ├── api.py</span><br><span class="line">    └── requirements.txt</span><br></pre></td></tr></table></figure><p><strong>product/api.py</strong></p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"><span class="keyword">from</span> flask_restful <span class="keyword">import</span> Resource, Api</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line">api = Api(app)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Product</span><span class="params">(Resource)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> &#123;<span class="string">'product'</span>: [ <span class="string">"Java"</span>, <span class="string">"Elixir"</span>,<span class="string">"Flutter"</span>]&#125;</span><br><span class="line"></span><br><span class="line">api.add_resource(Product, <span class="string">"/"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    app.run(host=<span class="string">'0.0.0.0'</span>, port=<span class="number">80</span>)</span><br></pre></td></tr></table></figure><p><strong>product/requirements.txt</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Flask&#x3D;&#x3D;0.12.0</span><br><span class="line">flask-restful&#x3D;&#x3D;0.3.5</span><br></pre></td></tr></table></figure><p><strong>Dockerfile</strong></p><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> python:<span class="number">3</span>-<span class="keyword">onbuild</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> . /usr/src/app</span></span><br><span class="line"><span class="keyword">CMD</span><span class="bash"> [<span class="string">"python"</span>,<span class="string">"api.py"</span>]</span></span><br></pre></td></tr></table></figure><p><strong>docker-compose.yml</strong></p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">'3.6'</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">product-service-py:</span></span><br><span class="line">    <span class="attr">build:</span> <span class="string">./product</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./product:/usr/src/app</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">5001</span><span class="string">:80</span></span><br></pre></td></tr></table></figure><h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># docker-compose -f docker-compose.yml up</span><br><span class="line">Starting docker-flask_product-service-py_1 ... done</span><br><span class="line">Attaching to docker-flask_product-service-py_1</span><br><span class="line">product-service-py_1  |  * Running on http:&#x2F;&#x2F;0.0.0.0:80&#x2F; (Press CTRL+C to quit)</span><br><span class="line">product-service-py_1  | 172.18.0.1 - - [25&#x2F;May&#x2F;2020 02:26:37] &quot;GET &#x2F; HTTP&#x2F;1.1&quot; 200 -</span><br></pre></td></tr></table></figure><p>访问服务 <a href="http://localhost:5001" target="_blank" rel="noopener">http://localhost:5001</a></p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">"product"</span>: [<span class="string">"Java"</span>, <span class="string">"Elixir"</span>, <span class="string">"Flutter"</span>] &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;基本信息&quot;&gt;&lt;a href=&quot;#基本信息&quot; class=&quot;headerlink&quot; title=&quot;基本信息&quot;&gt;&lt;/a&gt;基本信息&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pr
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Docker" scheme="http://tianshan20081.github.io/tags/Docker/"/>
+    
+      <category term="Docker-compose" scheme="http://tianshan20081.github.io/tags/Docker-compose/"/>
+    
+      <category term="Flask" scheme="http://tianshan20081.github.io/tags/Flask/"/>
+    
+  </entry>
   
   <entry>
     <title>Mac 开机自启动 Jenkins</title>

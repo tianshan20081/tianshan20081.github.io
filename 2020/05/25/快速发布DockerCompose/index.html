@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>快速发布DockerCompose | Legere</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Docker,Docker-compose,Flask">
+    <meta name="description" content="基本信息1234 # docker --versionDocker version 19.03.8, build afacb8b # docker-compose --versiondocker-compose version 1.25.5, build 8a1c60f6  创建工程1234567 # tree.├── docker-compose.yml└── product    ├── Do">
+<meta property="og:type" content="article">
+<meta property="og:title" content="快速发布DockerCompose">
+<meta property="og:url" content="http://tianshan20081.github.io/2020/05/25/%E5%BF%AB%E9%80%9F%E5%8F%91%E5%B8%83DockerCompose/index.html">
+<meta property="og:site_name" content="Legere">
+<meta property="og:description" content="基本信息1234 # docker --versionDocker version 19.03.8, build afacb8b # docker-compose --versiondocker-compose version 1.25.5, build 8a1c60f6  创建工程1234567 # tree.├── docker-compose.yml└── product    ├── Do">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-25T02:16:23.000Z">
+<meta property="article:modified_time" content="2020-05-25T02:28:38.379Z">
+<meta property="article:author" content="Legere">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="Docker-compose">
+<meta property="article:tag" content="Flask">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="Legere" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Legere</h5>
+          <a href="mailto:zhangshch2008@gmail.com" title="zhangshch2008@gmail.com" class="mail">zhangshch2008@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">快速发布DockerCompose</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">快速发布DockerCompose</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-05-25T02:16:23.000Z" itemprop="datePublished" class="page-time">
+  2020-05-25
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本信息"><span class="post-toc-number">1.</span> <span class="post-toc-text">基本信息</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建工程"><span class="post-toc-number">2.</span> <span class="post-toc-text">创建工程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#启动服务"><span class="post-toc-number">3.</span> <span class="post-toc-text">启动服务</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article
+    id="post-快速发布DockerCompose"
+    class="post-article article-type-post fade"
+    itemprop="blogPost"
+>
+    <div class="post-card">
+        <h1 class="post-card-title">快速发布DockerCompose</h1>
+        <div class="post-meta">
+            <time
+    class="post-time"
+    title="2020-05-25 10:16:23"
+    datetime="2020-05-25T02:16:23.000Z"
+    itemprop="datePublished"
+    >
+    <!-- 2020-05-25 -->
+    2020-05-25 10:16:23
+    </time
+>
+ 
+
+ 
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> # docker --version</span><br><span class="line">Docker version 19.03.8, build afacb8b</span><br><span class="line"> # docker-compose --version</span><br><span class="line">docker-compose version 1.25.5, build 8a1c60f6</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建工程"><a href="#创建工程" class="headerlink" title="创建工程"></a>创建工程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> # tree</span><br><span class="line">.</span><br><span class="line">├── docker-compose.yml</span><br><span class="line">└── product</span><br><span class="line">    ├── Dockerfile</span><br><span class="line">    ├── api.py</span><br><span class="line">    └── requirements.txt</span><br></pre></td></tr></table></figure>
+
+<p><strong>product/api.py</strong></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"><span class="keyword">from</span> flask_restful <span class="keyword">import</span> Resource, Api</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line">api = Api(app)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Product</span><span class="params">(Resource)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> &#123;<span class="string">'product'</span>: [ <span class="string">"Java"</span>, <span class="string">"Elixir"</span>,<span class="string">"Flutter"</span>]&#125;</span><br><span class="line"></span><br><span class="line">api.add_resource(Product, <span class="string">"/"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    app.run(host=<span class="string">'0.0.0.0'</span>, port=<span class="number">80</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>product/requirements.txt</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Flask&#x3D;&#x3D;0.12.0</span><br><span class="line">flask-restful&#x3D;&#x3D;0.3.5</span><br></pre></td></tr></table></figure>
+
+<p><strong>Dockerfile</strong></p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> python:<span class="number">3</span>-<span class="keyword">onbuild</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> . /usr/src/app</span></span><br><span class="line"><span class="keyword">CMD</span><span class="bash"> [<span class="string">"python"</span>,<span class="string">"api.py"</span>]</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>docker-compose.yml</strong></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">'3.6'</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">product-service-py:</span></span><br><span class="line">    <span class="attr">build:</span> <span class="string">./product</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./product:/usr/src/app</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">5001</span><span class="string">:80</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># docker-compose -f docker-compose.yml up</span><br><span class="line">Starting docker-flask_product-service-py_1 ... done</span><br><span class="line">Attaching to docker-flask_product-service-py_1</span><br><span class="line">product-service-py_1  |  * Running on http:&#x2F;&#x2F;0.0.0.0:80&#x2F; (Press CTRL+C to quit)</span><br><span class="line">product-service-py_1  | 172.18.0.1 - - [25&#x2F;May&#x2F;2020 02:26:37] &quot;GET &#x2F; HTTP&#x2F;1.1&quot; 200 -</span><br></pre></td></tr></table></figure>
+
+<p>访问服务 <a href="http://localhost:5001" target="_blank" rel="noopener">http://localhost:5001</a></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">"product"</span>: [<span class="string">"Java"</span>, <span class="string">"Elixir"</span>, <span class="string">"Flutter"</span>] &#125;</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2020-05-25T02:28:38.379Z" itemprop="dateUpdated">2020-05-25 10:28:38</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="http://tianshan20081.github.io">
+            <img src="/img/avatar.jpg" alt="Legere">
+            Legere
+        </a>
+    </footer>
+</blockquote>
+ 
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/" rel="tag">Docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker-compose/" rel="tag">Docker-compose</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flask/" rel="tag">Flask</a></li></ul>
+ 
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tianshan20081.github.io/2020/05/25/%E5%BF%AB%E9%80%9F%E5%8F%91%E5%B8%83DockerCompose/&title=《快速发布DockerCompose》 — Legere&pic=http://tianshan20081.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tianshan20081.github.io/2020/05/25/%E5%BF%AB%E9%80%9F%E5%8F%91%E5%B8%83DockerCompose/&title=《快速发布DockerCompose》 — Legere&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tianshan20081.github.io/2020/05/25/%E5%BF%AB%E9%80%9F%E5%8F%91%E5%B8%83DockerCompose/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《快速发布DockerCompose》 — Legere&url=http://tianshan20081.github.io/2020/05/25/%E5%BF%AB%E9%80%9F%E5%8F%91%E5%B8%83DockerCompose/&via=http://tianshan20081.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tianshan20081.github.io/2020/05/25/%E5%BF%AB%E9%80%9F%E5%8F%91%E5%B8%83DockerCompose/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/04/23/Mac-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8-Jenkins/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Mac 开机自启动 Jenkins</h4>
+      </a>
+    </div>
+  
+</nav>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Legere &copy; 2020</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://tianshan20081.github.io/2020/05/25/%E5%BF%AB%E9%80%9F%E5%8F%91%E5%B8%83DockerCompose/&title=《快速发布DockerCompose》 — Legere&pic=http://tianshan20081.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://tianshan20081.github.io/2020/05/25/%E5%BF%AB%E9%80%9F%E5%8F%91%E5%B8%83DockerCompose/&title=《快速发布DockerCompose》 — Legere&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://tianshan20081.github.io/2020/05/25/%E5%BF%AB%E9%80%9F%E5%8F%91%E5%B8%83DockerCompose/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《快速发布DockerCompose》 — Legere&url=http://tianshan20081.github.io/2020/05/25/%E5%BF%AB%E9%80%9F%E5%8F%91%E5%B8%83DockerCompose/&via=http://tianshan20081.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://tianshan20081.github.io/2020/05/25/%E5%BF%AB%E9%80%9F%E5%8F%91%E5%B8%83DockerCompose/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADNElEQVR42u3aQW7CQBAEQP7/6UTK1QK6Z02E1+UTMgS71lKGmd7HIz5+/o7jmeP547vH4/U3H88fXz979+QDGxsb+yLs5BZf3/Trzye3lS9KsgTJcmNjY2Pvx05KSFLGknKVFL8Wn1uwsbGx78xOFmXWWuTlMPkkNjY2NnY71kkAKyUnHyphY2Nj35m9cqOfG/3MSuPJszRsbGzsr2e3Qe83v/5gvo2NjY39leyf8pg1Hm30m7cWswMbGxt7J/Zs1J4Huu2QqG2K2moVAbCxsbEvy06G720pmkXCK5hkUxE2Njb2fdhtJDCjJhFyGzYXqQg2Njb2Fuz8X38e384W9KyiWJRMbGxs7IuzP9EY5GVvVuRWFgIbGxt7P/bK4GbWQuQlZ4Y5YYCFjY2NfSn2bGyU/Ohv2482fmgboWJPEDY2Nval2PnX5Q3ArI1pS+PKJ7GxsbF3YudDn7x0tcf6UKmOHLCxsbG3Y+eM4WUWtt3MPvnmEWJjY2NvxJ4FA3lrcVa70qYcp42WsLGxsb+e3X5FWySSTTNtCJHf1dPyho2Njb0d+6wxfd7MzBqefBPPm3exsbGxN2LPwMnFZq1OUgjblubptbCxsbE3ZQ9/3C/HBrNtPbOtRdjY2Ni7smeBa17M2vFQEgbk7UqdgWBjY2NfhJ1Q22y0LTBthJAsKzY2NvZ92P8zNkqOWVlqyyc2Njb2fuxZIzHD5Ft88qHS7LFhY2Nj78qejeOLOjkKZdshVHT/2NjY2Buxk+Ixezcpje2oaNY+vXkA2NjY2NuxZ6Oc2YXbAVM7SIpKKTY2NvbF2bORfUvKI9sZJg+JsbGxsfdmr4/jZ1tqVlqR/JuX4gFsbGzsL2Yng6F23N8GBnkAUPRVuQIbGxv74uyVLTh5w5Dj21J6Qt3GxsbGvji73UyTh6x5GLB+o8PNOtjY2NgbsfMAtQW3xSZvM9bvDRsbG3s/9ifGQ214kCDbovv0KtjY2Ni3ZCdNwiyyzcPj/G/fFFRsbGzsG7PzM7OhUrtksyXAxsbG3o+9MlSaDZhmLcRs5PSYPQdsbGzsi7DbMDVZstm4P98GlATD+YYhbGxs7MuyfwErpSFMdyRrcwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Legere';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
