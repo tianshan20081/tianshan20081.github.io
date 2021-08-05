@@ -2,7 +2,7 @@
 title: adb 获取 Android 手机本信息
 date: 2020-04-01 10:20:16
 tags: [Android, Adb]
-category: [Android 基本信息, abd]
+category: [Android 基本信息, adb]
 ---
 
 ### 如何查看 android 手机 编译信息
