@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tianshan20081.github.io/"/>
-  <updated>2022-08-08T09:23:29.194Z</updated>
+  <updated>2022-08-08T09:47:07.085Z</updated>
   <id>http://tianshan20081.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://tianshan20081.github.io/2022/08/08/C%E8%AF%AD%E8%A8%80%E7%BB%93%E6%9E%84%E4%BD%93%E9%95%BF%E5%BA%A6%E4%B8%BA0%E7%9A%84%E6%95%B0%E7%BB%84/"/>
     <id>http://tianshan20081.github.io/2022/08/08/C%E8%AF%AD%E8%A8%80%E7%BB%93%E6%9E%84%E4%BD%93%E9%95%BF%E5%BA%A6%E4%B8%BA0%E7%9A%84%E6%95%B0%E7%BB%84/</id>
     <published>2022-08-08T09:21:33.442Z</published>
-    <updated>2022-08-08T09:23:29.194Z</updated>
+    <updated>2022-08-08T09:47:07.085Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Data</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -40,7 +40,7 @@
       <category term="结构体" scheme="http://tianshan20081.github.io/categories/C-C/%E7%BB%93%E6%9E%84%E4%BD%93/"/>
     
     
-      <category term="React" scheme="http://tianshan20081.github.io/tags/React/"/>
+      <category term="C/C++" scheme="http://tianshan20081.github.io/tags/C-C/"/>
     
   </entry>
   
