@@ -13,6 +13,11 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 ```bash
 $ hexo new "My New Post"
 ```
+#### 指定文件存放位置
+```
+hexo new page --path about/me "About me"
+hexo new page --path C/libEvent "使用VS2017编译zlib"
+```
 
 More info: [Writing](https://hexo.io/docs/writing.html)
 
